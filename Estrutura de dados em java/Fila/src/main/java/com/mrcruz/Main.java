@@ -3,7 +3,7 @@ package com.mrcruz;
 public class Main {
 
     public static void main(String[] args) {
-        Fila fila = new Fila();
+        Fila<String> fila = new Fila<>();
         fila.enqueue("No 1");
         fila.enqueue("No 2");
         fila.enqueue("No 3");

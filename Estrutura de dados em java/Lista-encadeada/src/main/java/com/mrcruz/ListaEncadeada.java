@@ -8,6 +8,20 @@ public class ListaEncadeada<T> {
         this.referenciaEntrada = null;
     }
 
+    public void add(T conteudo){
+        No<T> novoNo = new No<>(conteudo);
+        if(this.isEmpty()){
+            referenciaEntrada = novoNo;
+            return;
+        }
+
+        No<T> noAux = referenciaEntrada;
+        for (int i = 0; i < this.size() - 1; i++){
+            noAux = noAux.getProximoNo();
+        }
+        noAux.setProximoNo(novoNo);
+    }
+
     public int size(){
         int tamanhoLista = 0;
         No<T> referenciaAux = referenciaEntrada;

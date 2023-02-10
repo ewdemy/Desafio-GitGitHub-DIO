@@ -72,6 +72,21 @@ public class ListaEncadeada<T> {
     public boolean isEmpty(){
         return referenciaEntrada == null;
     }
+
+    @Override
+    public String toString() {
+        String str = "";
+        No<T> noAux = referenciaEntrada;
+
+        for(int i = 0; i < this.size(); i++){
+            str +="No[{conteúdo=" + noAux.getConteudo() + "}]--->";
+            noAux = noAux.getProximoNo();
+        }
+        
+        str += "null";
+        return str;
+    }
+
     private void validaIndice(int index){
         if(index >= this.size()){
             throw new IndexOutOfBoundsException("Não existe conteúdo no índice " + index);
